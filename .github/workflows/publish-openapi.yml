@@ -35,6 +35,7 @@ jobs:
         run: ./gradlew integration --tests ${{ inputs.test_to_run }}
       - name: Commit to repository
         run: |
+          set -x
           mkdir openapi-staging
           cd openapi-staging
           git init
