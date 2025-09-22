@@ -53,4 +53,5 @@ jobs:
           cat docs/specs/$api_name.json
           git add "docs/specs/$api_name.json"
           # Only commit and push if we have changes
+          git status
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update spec for $api_name#${GITHUB_SHA:7}"; git push --set-upstream upstream master)
