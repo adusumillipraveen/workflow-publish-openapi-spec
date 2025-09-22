@@ -47,6 +47,8 @@ jobs:
           if [ -z "$api_name" ]; then
             api_name=$repo
           fi
+          echo $repo
+          ls /tmp/
           echo "$(cat /tmp/openapi-specs.json)" > "docs/specs/$api_name.json"
           git add "docs/specs/$api_name.json"
           # Only commit and push if we have changes
